@@ -1,86 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banumath Kovinda - Cyber Security Student</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@700;800;900&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-    <!-- Desktop Navigation -->
-    <nav class="navbar desktop-nav">
-        <div class="container">
-            <div class="nav-container">
-                <a href="#" class="logo">Portfolio<span>.</span></a>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button id="theme-toggle" class="theme-toggle">
-                        <i class="fas fa-sun animated-icon"></i>
-                    </button>
-                    <a href="#contact" class="btn btn-primary">Hire Me</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Mobile Navigation -->
-    <nav class="mobile-nav">
-        <div class="mobile-nav-container">
-            <a href="#" class="mobile-logo">Portfolio<span>.</span></a>
-            <div class="mobile-nav-actions">
-                <button id="mobile-theme-toggle" class="mobile-theme-toggle">
-                    <i class="fas fa-sun animated-icon"></i>
-                </button>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <header class="navbar-header">
+        <div class="navbar-wrapper">
+            <nav class="navbar" id="navbar">
+                <!-- Logo -->
+                <a href="#home" class="logo" id="nav-logo">
+                    <span class="logo-text"><span class="logo-b">B</span><span class="logo-k">K</span></span><span class="logo-dot">.</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="nav-links-desktop">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                    <a href="#about" class="nav-link" data-section="about">About</a>
+                    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                    <div class="nav-indicator" id="nav-indicator"></div>
                 </div>
-            </div>
-        </div>
-        <div class="mobile-menu-overlay">
-            <div class="mobile-menu">
-                <ul class="mobile-nav-links">
-                    <li><a href="#home" class="mobile-nav-link active">Home</a></li>
-                    <li><a href="#about" class="mobile-nav-link">About</a></li>
-                    <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-                    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-                </ul>
-                <div class="mobile-menu-cta">
-                    <a href="#contact" class="mobile-cta-btn">Hire Me</a>
+
+                <!-- Right Controls -->
+                <div class="nav-controls">
+                    <!-- Dark Mode Toggle Button -->
+                    <button type="button" id="theme-toggle" class="control-btn theme-toggle-btn"
+                        aria-label="Toggle theme">
+                        <!-- SunDim icon (Lucide) -->
+                        <svg class="theme-icon icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <line x1="12" y1="2" x2="12" y2="4"></line>
+                            <line x1="12" y1="20" x2="12" y2="22"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <!-- Moon icon (Lucide) -->
+                        <svg class="theme-icon icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Desktop CTA Hire Me -->
+                    <a href="#contact" class="btn-hire-cta">Hire Me</a>
+
+                    <!-- Mobile Menu Button -->
+                    <button type="button" id="mobile-menu-btn" class="control-btn mobile-toggle-btn"
+                        aria-label="Toggle menu" aria-expanded="false">
+                        <!-- Menu icon -->
+                        <svg class="menu-icon icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" y1="12" x2="20" y2="12"></line>
+                            <line x1="4" y1="6" x2="20" y2="6"></line>
+                            <line x1="4" y1="18" x2="20" y2="18"></line>
+                        </svg>
+                        <!-- Close X icon -->
+                        <svg class="menu-icon icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
                 </div>
-            </div>
+
+                <!-- Mobile Menu Dropdown -->
+                <div class="mobile-dropdown-menu" id="mobile-dropdown-menu">
+                    <div class="mobile-dropdown-inner">
+                        <a href="#home" class="mobile-nav-item active" data-section="home">Home</a>
+                        <a href="#about" class="mobile-nav-item" data-section="about">About</a>
+                        <a href="#projects" class="mobile-nav-item" data-section="projects">Projects</a>
+                        <a href="#contact" class="mobile-nav-item" data-section="contact">Contact</a>
+                        <a href="#contact" class="mobile-hire-cta">Hire Me</a>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Banumath Kovinda</span>
+                    <span class="hero-greeting">Hi, I'm</span><br><span class="highlight" id="hero-typing-name" data-text="Banumath Kovinda">Banumath Kovinda</span><span class="typing-cursor" aria-hidden="true">|</span>
                 </h1>
-                <p class="hero-subtitle">Cyber Security Student | SLIIT |  Security Researcher</p>
+                <p class="hero-subtitle">Cyber Security Student | SLIIT | Security Researcher</p>
                 <p class="hero-description">
-                    Passionate about cybersecurity and protecting digital assets. As a cyber security student at SLIIT, 
-                    I'm dedicated to learning ethical hacking, penetration testing, and security best practices 
+                    Passionate about cybersecurity and protecting digital assets. As a cyber security student at SLIIT,
+                    I'm dedicated to learning ethical hacking, penetration testing, and security best practices
                     to make the digital world safer for everyone.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="Banumath_Kovinda_CV.pdf" download="Banumath_Kovinda_CV.pdf" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
                 <div class="hero-social">
-                    <a href="https://github.com/IT24102626" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/banumath-kovinda-a184b4374/" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/_.banu._z?igsh=MTg3dW83eTdncHc2dQ==" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/Banumathkovinda" class="social-link" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/banumath-kovinda-a184b4374/" class="social-link"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/_.banu._z?igsh=MTg3dW83eTdncHc2dQ==" class="social-link"
+                        target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="hero-image">
@@ -89,20 +129,21 @@
                 </div>
                 <!-- Mobile Social Links -->
                 <div class="mobile-hero-social">
-                    <a href="https://github.com/IT24102626" class="mobile-hero-social-link" target="_blank">
+                    <a href="https://github.com/Banumathkovinda" class="mobile-hero-social-link" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/banumath-kovinda-a184b4374/" class="mobile-hero-social-link">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://www.instagram.com/_.banu._z?igsh=MTg3dW83eTdncHc2dQ==" class="mobile-hero-social-link" target="_blank">
+                    <a href="https://www.instagram.com/_.banu._z?igsh=MTg3dW83eTdncHc2dQ=="
+                        class="mobile-hero-social-link" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
             </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
     </section>
 
     <!-- About Section -->
@@ -113,19 +154,22 @@
                 <div class="about-left">
                     <div class="about-photo-container">
                         <img src="about-profile.jpg" alt="Banumath Kovinda" class="about-profile-img">
-                      
+
                     </div>
                 </div>
                 <div class="about-right">
                     <div class="about-text">
                         <p>
-                            I'm a cyber security student at SLIIT with a passion for ethical hacking and digital forensics. 
-                            My journey in cybersecurity started with curiosity about how systems work and evolved into 
-                            a dedication to protecting digital infrastructure and educating others about security best practices.
+                            I'm a cyber security student at SLIIT with a passion for ethical hacking and digital
+                            forensics.
+                            My journey in cybersecurity started with curiosity about how systems work and evolved into
+                            a dedication to protecting digital infrastructure and educating others about security best
+                            practices.
                         </p>
                         <p>
-                            I specialize in penetration testing, vulnerability assessment, and security analysis. 
-                            I believe in proactive security measures and continuous learning to stay ahead of emerging threats 
+                            I specialize in penetration testing, vulnerability assessment, and security analysis.
+                            I believe in proactive security measures and continuous learning to stay ahead of emerging
+                            threats
                             in the ever-evolving cyber landscape.
                         </p>
                     </div>
@@ -140,7 +184,7 @@
                         </div>
                     </div>
                     <div class="about-stats">
-                        
+
                         <div class="stat-item">
                             <h3 class="stat-number">4+</h3>
                             <p class="stat-label">Projects Completed</p>
@@ -169,7 +213,7 @@
                         <p class="education-school">Sri Lanka Institute of Information Technology (SLIIT)</p>
                         <p class="education-date">2025 - Present</p>
                         <p class="education-description">
-                            Currently pursuing undergraduate degree in Cyber Security with focus on ethical hacking, 
+                            Currently pursuing undergraduate degree in Cyber Security with focus on ethical hacking,
                             network security, and digital forensics.
                         </p>
                     </div>
@@ -281,12 +325,44 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
+                        <img src="omnisight-soc.png" alt="OmniSight – Wazuh SOC Lab" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">OmniSight – Wazuh SOC Lab</h3>
+                        <p class="project-description">
+                            Developed a hands-on SOC monitoring lab using Wazuh SIEM to detect and analyze security
+                            threats in real time. Integrated Ubuntu Server monitoring, simulated SSH brute-force
+                            attacks and network scanning using Kali Linux, and built a Python Flask dashboard with
+                            Telegram alert notifications.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Wazuh</span>
+                            <span class="tech-tag">Kali Linux</span>
+                            <span class="tech-tag">Ubuntu Server</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">VirtualBox</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Banumathkovinda/OmniSight-SOC" class="project-link"
+                                target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://github.com/Banumathkovinda/OmniSight-SOC#readme" class="project-link"
+                                target="_blank">
+                                <i class="fas fa-book-open"></i> Docs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
                         <img src="network-security-scanner.avif" alt="Network Security Scanner" class="project-img">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Network Security Scanner</h3>
                         <p class="project-description">
-                            A comprehensive network vulnerability scanner that identifies open ports, 
+                            A comprehensive network vulnerability scanner that identifies open ports,
                             running services, and potential security weaknesses in network infrastructure.
                         </p>
                         <div class="project-tech">
@@ -296,10 +372,12 @@
                             <span class="tech-tag">Socket</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://it24102626.github.io/Network-Security-Scanner/" class="project-link" target="_blank">
+                            <a href="https://Banumathkovinda.github.io/Network-Security-Scanner/" class="project-link"
+                                target="_blank">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/IT24102626/Network-Security-Scanner" class="project-link" target="_blank">
+                            <a href="https://github.com/Banumathkovinda/Network-Security-Scanner" class="project-link"
+                                target="_blank">
                                 <i class="fab fa-github"></i> Code
                             </a>
                         </div>
@@ -307,52 +385,65 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="password-cracking-tool.jpg" alt="Password Cracking Tool" class="project-img">
+                        <img src="cyberbank-ctf.jpg" alt="CyberBank: Operation BlackVault CTF" class="project-img">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Password Cracking Tool</h3>
+                        <h3 class="project-title">CyberBank: Operation BlackVault – CTF Platform</h3>
                         <p class="project-description">
-                            An ethical password cracking tool that uses dictionary attacks and brute force methods 
-                            to test password strength and identify weak credentials in security assessments.
+                            Developed a cybersecurity Capture The Flag (CTF) platform based on a fictional banking
+                            environment. The project features hands-on challenges in OSINT, Steganography, Web Security,
+                            Cryptography, Digital Forensics, and Linux/System Security, helping users develop practical
+                            cybersecurity and penetration testing skills.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Hashcat</span>
-                            <span class="tech-tag">John the Ripper</span>
-                            <span class="tech-tag">Hashlib</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="web-security-tester.jpg" alt="Web Application Security Tester" class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Web Application Security Tester</h3>
-                        <p class="project-description">
-                            A web application penetration testing tool that automatically scans for common vulnerabilities 
-                            including SQL injection, XSS, CSRF, and other OWASP Top 10 security risks.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">MySQL</span>
                             <span class="tech-tag">Burp Suite</span>
-                            <span class="tech-tag">Selenium</span>
-                            <span class="tech-tag">Requests</span>
+                            <span class="tech-tag">Wireshark</span>
+                            <span class="tech-tag">Nmap</span>
+                            <span class="tech-tag">ExifTool</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://banumathkovinda.github.io/web-appilaction-security-Tester/" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                            <a href="https://github.com/Banumathkovinda/web-appilaction-security-Tester" class="project-link" target="_blank">
+                            <a href="https://github.com/Banumathkovinda/CyberBank-CTF" class="project-link"
+                                target="_blank">
                                 <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://github.com/Banumathkovinda/CyberBank-CTF#readme" class="project-link"
+                                target="_blank">
+                                <i class="fas fa-book-open"></i> Docs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="devsecops-pipeline.png" alt="DevSecOps Pipeline Using DVWA" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">DevSecOps Pipeline Using DVWA</h3>
+                        <p class="project-description">
+                            Developed a Docker-based DVWA environment and implemented an automated DevSecOps CI/CD
+                            pipeline using GitHub Actions with integrated security gates: SAST (Semgrep), Secrets
+                            Detection (Gitleaks), and SCA/Container Image Scanning (Trivy). Focused on vulnerability
+                            assessment, secure coding, secrets management, and container security.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">DevSecOps</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                            <span class="tech-tag">Semgrep</span>
+                            <span class="tech-tag">Trivy</span>
+                            <span class="tech-tag">Gitleaks</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Banumathkovinda/IE3142-DVWA-DevSecOps" class="project-link"
+                                target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://github.com/Banumathkovinda/IE3142-DVWA-DevSecOps#readme"
+                                class="project-link" target="_blank">
+                                <i class="fas fa-book-open"></i> Docs
                             </a>
                         </div>
                     </div>
@@ -364,8 +455,9 @@
                     <div class="project-content">
                         <h3 class="project-title">Heart Disease Prediction</h3>
                         <p class="project-description">
-                            An AI-powered machine learning application that predicts heart disease risk using advanced algorithms 
-                            and medical data analysis. Features real-time predictions with accuracy metrics and 
+                            An AI-powered machine learning application that predicts heart disease risk using advanced
+                            algorithms
+                            and medical data analysis. Features real-time predictions with accuracy metrics and
                             interactive data visualization for healthcare professionals.
                         </p>
                         <div class="project-tech">
@@ -375,10 +467,12 @@
                             <span class="tech-tag">Scikit-learn</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://heart-predict-app-bdvkjh5hogcb3a2zmz4ecr.streamlit.app/" class="project-link" target="_blank">
+                            <a href="https://heart-predict-app-bdvkjh5hogcb3a2zmz4ecr.streamlit.app/"
+                                class="project-link" target="_blank">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/IT24102626/heart-predict-app" class="project-link" target="_blank">
+                            <a href="https://github.com/Banumathkovinda/heart-predict-app" class="project-link"
+                                target="_blank">
                                 <i class="fab fa-github"></i> Code
                             </a>
                         </div>
@@ -396,7 +490,7 @@
                 <div class="contact-info">
                     <h3>Let's Work Together</h3>
                     <p>
-                        I'm always interested in hearing about new projects and opportunities. 
+                        I'm always interested in hearing about new projects and opportunities.
                         Whether you have a question or just want to say hi, feel free to reach out!
                     </p>
                     <div class="contact-details">
@@ -414,7 +508,7 @@
                         </div>
                     </div>
                     <div class="contact-social">
-                        <a href="#" class="social-link-large">
+                        <a href="https://github.com/Banumathkovinda" class="social-link-large" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="social-link-large">
@@ -453,6 +547,12 @@
         </div>
     </footer>
 
+    <!-- Floating Back to Top Button -->
+    <button type="button" id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script src="script.js"></script>
 </body>
+
 </html>
