@@ -2708,15 +2708,9 @@ body:not(.dark-mode) .back-to-top-btn:hover {
 /* Certifications Grid */
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     width: 100%;
-}
-
-@media (max-width: 1024px) {
-    .certifications-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 680px) {
